@@ -17,3 +17,23 @@ function postContain(posts) {
         postContainer.appendChild(div)
     }
 }
+
+function album() {
+    fetch('https://jsonplaceholder.typicode.com/albums')
+        .then(res => res.json())
+        .then(data => getAlbum(data))
+}
+// album()
+let count = 0;
+
+function getAlbum(albums) {
+
+    const div = document.getElementById('album-container')
+    for (const album of albums) {
+        const p = document.createElement('p')
+        p.classList.add('post2')
+        p.innerText = ` ${count++} =  ${album.title}`
+        div.appendChild(p)
+
+    }
+}
