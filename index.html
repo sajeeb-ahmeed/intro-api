@@ -7,6 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API</title>
 </head>
+<style>
+    .post {
+        text-align: center;
+        margin: 5px;
+        padding: 7px 10px;
+        background-color: rgb(2, 46, 56);
+        color: rgb(211, 211, 211);
+        border: 1px solid rgb(156, 148, 148);
+        border-radius: 15px;
+        margin-bottom: 3px;
+
+    }
+</style>
 
 <body>
 
@@ -15,8 +28,18 @@
     <button onclick="loadData()">Load Data</button>
     <button onclick="loadUserData()">Load Users Data</button>
     <button onclick="seePost()">See POst Data</button>
-    <!-- <script src="js/json.js"></script> -->
+
+    <section id="post-container">
+
+
+    </section>
+
+
+
+
+    <script src="js/json.js"></script>
     <script src="js/api.js"></script>
+    <script src="js/post.js"></script>
 </body>
 
 </html>
