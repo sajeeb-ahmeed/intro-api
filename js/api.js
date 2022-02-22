@@ -19,24 +19,30 @@ function loadUserData() {
         .then(data => displayUserData(data))
 }
 
-function seePost() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(post => post.json())
-        .then(data => console.log(data))
-}
 
 function displayUserData(data) {
+    const usersinfo = document.getElementById('users-info')
     for (const user of data) {
 
-        console.log(user);
+        // console.log(user);
         const email = user.email;
         const uname = user.username
         const phonenumber = user.phone
         const info = ` User Email: ${email} 
-                      username : ${uname}
-                      user Phone Number : ${phonenumber}   
-        
-                    `
-        console.log(info);
+                          username : ${uname}
+                          user Phone Number : ${phonenumber}   
+
+                        `
+        // console.log(user.name);
+        const li = document.createElement('li')
+        li.innerText = info;
+        usersinfo.appendChild(li)
     }
+}
+
+
+function seePost() {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(post => post.json())
+        .then(data => console.log(data))
 }
