@@ -18,6 +18,6 @@ const shop = {
 }
 const stringify = JSON.stringify(shop);
 const shopParse = JSON.parse(stringify)
-console.log(shop);
-console.log(shopParse);
-console.log(stringify);
+console.log(shop.name);
+// console.log(shopParse);
+// console.log(stringify);
