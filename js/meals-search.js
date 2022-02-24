@@ -3,20 +3,31 @@ const serachFood = () => {
     const searchValue = SearchInput.value;
     SearchInput.value = searchValue;
     SearchInput.value = '';
-    console.log(searchValue);
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`
-    // console.log(url);
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displaySearchResult(data.meals))
-    console.log(url);
+    if (searchValue == '' || searchValue < 0 || searchValue > 0) {
+        const alert = document.getElementById('alert')
+        alert.innerHTML = `
+        <h4 class="text-center text-danger">! Please Enter A Food Name </h4>
+        `
+        return alert;
+    } else {
+        console.log(searchValue);
+        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`
+        // console.log(url);
+        fetch(url)
+            .then(res => res.json())
+            .then(data => displaySearchResult(data.meals))
+        console.log(url);
+
+    }
+
 }
 
 // meal search result 
 const displaySearchResult = meals => {
-    SearchInput.value = '';
-    console.log(meals);
     const searchResult = document.getElementById('search-container');
+    const alert = document.getElementById('alert')
+    alert.innerHTML = ''
+    searchResult.innerHTML = '';
     meals.forEach(meal => {
 
         const section = document.createElement('div');
