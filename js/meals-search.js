@@ -1,8 +1,11 @@
+const detailsMeal = document.getElementById('mealDetails')
+
 const serachFood = () => {
     const SearchInput = document.getElementById('SearchInput')
     const searchValue = SearchInput.value;
     SearchInput.value = searchValue;
     SearchInput.value = '';
+    detailsMeal.innerHTML = ''
     if (searchValue == '' || searchValue < 0 || searchValue > 0) {
         const alert = document.getElementById('alert')
         alert.innerHTML = `
@@ -66,8 +69,9 @@ const mealDetails = mealId => {
         .then(data => mealSingleDetails(data.meals))
 }
 
+
 const mealSingleDetails = meal => {
-    const detailsMeal = document.getElementById('mealDetails')
+    detailsMeal.innerHTML = ''
     meal.forEach(meal => {
         const newDiv = document.createElement('div');
         newDiv.classList.add = 'card';
