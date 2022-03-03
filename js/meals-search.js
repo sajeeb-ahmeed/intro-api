@@ -25,6 +25,7 @@ const serachFood = () => {
 
 }
 
+
 // meal search result 
 const displaySearchResult = meals => {
     const searchResult = document.getElementById('search-container');
@@ -49,7 +50,7 @@ const displaySearchResult = meals => {
              
                </h6>
               
-              <small> strInstructions: ${slice.slice(0 , 303 )} <a target="_blank" href="${meal.strSource}">[ Read more...]</a> </small>   <br>
+              <small> strInstructions: ${slice.slice(0, 303)} <a target="_blank" href="${meal.strSource}">[ Read more...]</a> </small>   <br>
         </div>
     </div>
        
@@ -69,7 +70,7 @@ const mealDetails = mealId => {
         .then(data => mealSingleDetails(data.meals))
 }
 
-
+//
 const mealSingleDetails = meal => {
     detailsMeal.innerHTML = ''
     meal.forEach(meal => {
