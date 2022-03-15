@@ -18,7 +18,7 @@ const displayHTML = country => {
     return `
     <div>
             <h2> ${country.name}</h2>
-            <img src="${country.flags.png}" alt="">
+            <img class="border-secondary bg-primary rounded-2 m-4 " src="${country.flags.png}" alt="">
     </div>
     
     `
